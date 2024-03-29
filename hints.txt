@@ -2,3 +2,7 @@ You don't have to connect to 'darkweb' to buy; you can do it from any server (on
 To nuke a server, you just need the minimum ports open. You don't need to have your hack level up to the servers. 
 You can run scripts on any server that you can nuke. 
 Put the above two together - you can use nuked servers (even if above your hack level) to run scripts and help hack other servers. 
+
+Keep a bookmark on https://github.com/bitburner-official/bitburner-src/blob/stable/markdown/bitburner.ns.md
+
+Follow the programers' code: First: make it simple. Second: make it compile. Third: make it repeatable. Fourth: make it run correctly. Finally: optimize it. 
