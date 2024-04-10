@@ -46,9 +46,9 @@ export function getNodeRatingsAt(ns, nIdx) {
 
 /** @param {NS} ns */
 export async function main(ns) {
-  const Delay_ms = 5000;
+  const Delay_ms = 3000;
   const MaxNodes = 8;
-  const MaxFracPlayerMoney = 0.05;
+  const MaxFracPlayerMoney = 0.01;
   ns.tail();
   while (true) {
     // get ratings on getting a new node and all the current ratings node
