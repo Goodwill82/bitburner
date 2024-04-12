@@ -4,7 +4,7 @@
  *
  * @param {string} command - A string with the terminal command(s) to run.
  **/
-export function runTerminalCommand(command) {
+export function terminalInject(command) {
 	let terminalInput = eval("document").getElementById("terminal-input");
 	let terminalEventHandlerKey = Object.keys(terminalInput)[1];
 	terminalInput.value = command;
@@ -49,7 +49,7 @@ export const TabGroups = [
 	{ group: "Help", tabs: ["Milestones", "Documentation", "Achievements", "Options"] },
 ]
 
-export function setTab(tabName) {
+export function clickTab(tabName) {
 	//  get group (and check if tabName is valid)
 	let groupName = "";
 	for (let tabGroup of TabGroups) {
