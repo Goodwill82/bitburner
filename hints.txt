@@ -6,3 +6,15 @@ Put the above two together - you can use nuked servers (even if above your hack 
 Keep a bookmark on https://github.com/bitburner-official/bitburner-src/blob/stable/markdown/bitburner.ns.md
 
 Follow the programers' code: First: make it simple. Second: make it compile. Third: make it repeatable. Fourth: make it run correctly. Finally: optimize it. 
+
+******* Hacknet Servers *******
+Hacknet servers (not to be confused with Hacknet nodes) allow you to reduce the minimum security levels of servers and increase the servers' maximum money amount (among other things). It's a huge waste to use Hacknet servers for running hacking scripts when you could be using them to make the other servers you're hacking produce more money faster or the like.
+
+I mostly use my Hacknet servers to bring other servers down to a minimum security level of 1 (though you don't need to go all the way down to the minimum) and up to a maximum money of as much as $10.2 trillion. Thus, at two batch attacks per second, those fully-modified servers are netting me about $20 trillion per second each. At a hacking level of around 1000, each batch attack against those servers uses about 12TB +/- 2 RAM, and only about 45 +/- 5 batches need to run at the same time for two attacks per second. I spend just enough money to increase the RAM and cores on the "home" server so that I can launch all of those attacks (4 - 16PB is plenty of RAM for that).
+
+As for leveling up your Hacknet servers, increasing their levels, RAM, and cores all increase the speed of your Hacknet servers. The trick is knowing when to purchase which one of those three improvements. What you should do is write some code which will calculate for you the highest hash rate per dollar amount spent you'd get for levels, RAM, and cores, and then just buy that one.
+
+Once you do that, you'll then discover, for example, you should buy approximately 4.25 levels per core. This allows you to maximize the rate at which hash production goes up, which increases the speed at which you can upgrade the servers you're attacking, which increases the speed a which you can make money from them to level up your Hacknet servers more.
+
+Buying cache for your Hacknet servers is only needed when you can't store enough hashes to buy the next upgrade, at which time you should just buy the cheapest cache upgrade available among your Hashnet servers.
+******* End *******
