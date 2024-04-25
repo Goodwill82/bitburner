@@ -60,7 +60,7 @@ export async function main(ns) {
     for (let [key, val] of Object.entries(printLengths)) {
         printLengths[key] = val + 2; // add padding
     }
-    locInfo.sort(function (a1, a2) { return a1.difficulty - a2.difficulty });
+    locInfo.sort(function (a1, a2) { return a2.repOverDifficulty - a1.repOverDifficulty });
     ns.print(`${"City".padEnd(printLengths.city)}${"Location".padEnd(printLengths.name)}${"Difficulty".padEnd(printLengths.difficulty)}${"SoA Rep".padEnd(printLengths.repSoA)}${"Trade Rep".padEnd(printLengths.repOther)} ${"Cash".padEnd(printLengths.sellCash)} TradeRep/Diff`);
     for (let info of locInfo) {
         ns.print(`${info.city.padEnd(printLengths.city)}${info.name.padEnd(printLengths.name)}${info.difficulty.toFixed(6).padEnd(printLengths.difficulty)}${info.repSoA.toFixed(0).padEnd(printLengths.repSoA)}${info.repOther.toFixed(0).padEnd(printLengths.repOther)}${fMoney(info.sellCash).padEnd(printLengths.sellCash)}  ${info.repOverDifficulty.toExponential(2)}`);
