@@ -21,14 +21,14 @@ export function autocomplete(data, args) {
 	const ShowTexts = false;
 	let ret = [];
 	if (ShowFlagArgs) {
-    	//const FlagArgs = data.flags(FlagSchema);
-    	//let flagKeys = [];
-    	//for (let [key, val] of Object.entries(FlagArgs)) {
-    	//	if (key.startsWith("--")) {
-    	//		flagKeys.push(key);
-    	//	}
-    	//}
-    	//ret.push(...flagKeys);
+	    	//const FlagArgs = data.flags(FlagSchema);
+	    	//let flagKeys = [];
+	    	//for (let [key, val] of Object.entries(FlagArgs)) {
+	    	//	if (key.startsWith("--")) {
+	    	//		flagKeys.push(key);
+	    	//	}
+	    	//}
+	    	//ret.push(...flagKeys);
 		data.flags(FlagSchema); // just calling "data.flags(FlagSchema)" adds the flag strings
 		// alternatively, a filtered schema can be provided (for instance, if an arg check shows the flag was already 
 		// used, you can make a schema without it and call data.flags() with that so it wont show up again)
