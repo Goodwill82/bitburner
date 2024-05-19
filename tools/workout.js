@@ -1,9 +1,12 @@
 //import * as ms from "/mystuff.js"; // common functions - no extra RAM overhead
-//import { function } from "/file/path.js"; // get needed functions without incuring RAM overhead of other functions in file
+//import { func } from "/file/path.js"; // get needed functions without incuring RAM overhead of other functions in file
+
+export const ValidWhos = ["player", "sleeve0", "sleeve1", "sleeve2", "sleeve3", "sleeve4", "sleeve5", "sleeve6", "sleeve7"];
+export const ValidWhats = ["all", "Strength", "Defense", "Dexterity", "Agility"];
+export const ValidWheres = ['best', 'incity', '"Powerhouse Gym"', '"Iron Gym"', '"Crush Fitness Gym"', '"Snap Fitness Gym"', '"Millenium Fitness Gym"'];
 
 //const FlagSchema = [["argBool", false],["argNum", 0],["argStr", ""],["argStrArr", []],["help", false],];
-const FlagSchema = [["stay", false],["who", "player"],["help", false],];
-export const ValidWhos = ["player", "sleeve0", "sleeve1", "sleeve2", "sleeve3", "sleeve4", "sleeve5", "sleeve6", "sleeve7"];
+const FlagSchema = [["who", ValidWhos[0]],["what", ValidWhats[0]],["lvl", 100],["where", ValidWheres[0]],["help", false],];
 
 // autocomplete(data, args) Arguments: 
 // data (Object) – general data about the game you might want to autocomplete.
@@ -16,34 +19,47 @@ export const ValidWhos = ["player", "sleeve0", "sleeve1", "sleeve2", "sleeve3", 
 // }
 // args (string[]) – current arguments. Minus run script.js
 export function autocomplete(data, args) {
-	const ShowFlagArgs = true;
-	const ShowServers = true;
-	const ShowScripts = false;
-	const ShowTexts = false;
-	let ret = [];
-	if (ShowFlagArgs) {
-	    	//const FlagArgs = data.flags(FlagSchema);
-	    	//let flagKeys = [];
-	    	//for (let [key, val] of Object.entries(FlagArgs)) {
-	    	//	if (key.startsWith("--")) {
-	    	//		flagKeys.push(key);
-	    	//	}
-	    	//}
-	    	//ret.push(...flagKeys);
-		data.flags(FlagSchema); // just calling "data.flags(FlagSchema)" adds the flag strings
-		// alternatively, a filtered schema can be provided (for instance, if an arg check shows the flag was already 
-		// used, you can make a schema without it and call data.flags() with that so it wont show up again)
+	const FlagCounts = [];
+	let lastFlag = null;
+	for (let arg of args) {
+		if (arg.startsWith("--")) {
+			lastFlag = arg;
+			let notInFlagCounts = true;
+			for (let ii = 0; idx < FlagCounts.length; ++ii) {
+				if (FlagCounts[0].flag === arg) {
+					FlagCounts[0].count += 1;
+					notInFlagCounts = false;
+					break;
+				}
+			}
+			if (notInFlagCounts) {
+				FlagCounts.push({ flag: arg, count: 1 });
+			}
+		}
 	}
-	if (ShowServers) {
-		ret.push(...data.servers); // adds all ingame servers that are currently available to connect to
+	
+	const NewFlags = [];
+	const NewFlagSchema = [];
+	//const FlagArgs = data.flags(FlagSchema);
+	//let flagKeys = [];
+	for (let [key, val] of Object.entries(FlagSchema)) {
+		if (!FlagCounts.includes(key)) {
+			NewFlags.push(key);
+			NewFlagSchema.push([key, val]);
+		}
 	}
-	if (ShowScripts) {
-		ret.push(...data.scripts); // adds all script files (.js and .script) from home (or connected server?)
+
+	// check if the last arg is a flag that needs a hint
+	
+	
+	data.flags(NewFlagSchema); // just calling "data.flags(FlagSchema)" adds the flag strings
+	// alternatively, a filtered schema can be provided (for instance, if an arg check shows the flag was already 
+	// used, you can make a schema without it and call data.flags() with that so it wont show up again)
+
+	const RetStrings = [];
+	{
 	}
-	if (ShowTexts) {
-		ret.push(...data.txts); // adds all text files (.txt) from home (or connected server?)
-	}
-	return ret;
+	return RetStrings;
 }
 
 /**
@@ -61,6 +77,29 @@ export function simpleFunc(ns, str, num) {
 	}
 	return repeated;
 }
+
+/*
+	ns.singularity.gymWorkout("Powerhouse Gym", "Strength", true);
+	while (ns.getPlayer().skills.strength < CombatSkillTarget) {
+		await ns.sleep(5000);
+	}
+	ns.singularity.gymWorkout("Powerhouse Gym", "Defense", true);
+	while (ns.getPlayer().skills.defense < CombatSkillTarget) {
+		await ns.sleep(5000);
+	}
+	ns.singularity.gymWorkout("Powerhouse Gym", "Dexterity", true);
+	while (ns.getPlayer().skills.dexterity < CombatSkillTarget) {
+		await ns.sleep(5000);
+	}
+	ns.singularity.gymWorkout("Powerhouse Gym", "Agility", true);
+	while (ns.getPlayer().skills.agility < CombatSkillTarget) {
+		await ns.sleep(5000);
+	}
+*/
+// strength  "str"
+// defense   "def"
+// dexterity "dex"
+// agility   "agi"
 
 /** @param {NS} ns */
 export async function main(ns) {
