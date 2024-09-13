@@ -49,13 +49,12 @@ export async function main(ns) {
     }
   }
   if (printUsage) {
-    ns.tprintRaw(`xanalyze Usage: xanalyze SERVER
+    ns.tprintRaw(`Usage: run ${ns.getScriptName()} SERVER
 Example: 
-> xanalyze run4theh111z
+> run ${ns.getScriptName()} run4theh111z
 `);
     ns.exit();
   }
-
 
   let player = ns.getPlayer();
   let server = ns.getServer(serv);
@@ -212,4 +211,5 @@ ${server.hostname}: `);
   ns.tprintf(`SMTP port: \x1b[${smtp_port_col}m${smtp_port}`);
   ns.tprintf(`HTTP port: \x1b[${http_port_col}m${http_port}`);
   ns.tprintf(`SQL port: \x1b[${sql_port_col}m${sql_port}`);
+  ns.tprintRaw();
 }
