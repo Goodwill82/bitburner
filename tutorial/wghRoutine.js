@@ -83,7 +83,7 @@ export async function main(ns) {
       while (await ns.sleep(400) && ns.isRunning(procPID)) { } // wait until finished
     }
     else {
-      // if the process failed to start, it is likely the run server ram changes between checking it and running a process - just wait a bit and try again
+      // if the process failed to start, it is likely the run server ram changed between checking it and running a process - just wait a bit and try again
       await ns.sleep(2000); // 2 seconds
     }
   }
