@@ -36,6 +36,7 @@ export const TabIcons = {
 	"Bladeburner": "FormatBoldIcon",
 	"Gang": "SportsMmaIcon",
 	"Corporation": "BusinessIcon",
+	"IPvGO Subnet": "BorderInnerSharpIcon",
 	"Help": "LiveHelpIcon",
 	"Milestones": "CheckIcon",
 	"Documentation": "HelpIcon",
@@ -45,7 +46,7 @@ export const TabIcons = {
 export const TabGroups = [
 	{ group: "Hacking", tabs: ["Terminal", "Script Editor", "Active Scripts", "Create Program", "Staneks Gift"] },
 	{ group: "Character", tabs: ["Stats", "Factions", "Augmentation", "Hacknet", "Sleeve"] },
-	{ group: "World", tabs: ["City", "Travel", "Job", "Stock Market", "Bladeburner", "Gang", "Corporation"] },
+	{ group: "World", tabs: ["City", "Travel", "Job", "Stock Market", "Bladeburner", "Gang", "Corporation", "IPvGO Subnet"] },
 	{ group: "Help", tabs: ["Milestones", "Documentation", "Achievements", "Options"] },
 ]
 
