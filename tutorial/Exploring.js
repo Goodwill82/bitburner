@@ -386,10 +386,10 @@ And, finally, we wrap this all up into one neat function and a class definition:
         if (visited.includes(connection)) {
           continue;
         }
-        visited.push(connection); // else, add it to the list and the parent node
+        visited.push(connection);
         let childNode = new Node(connection);
         node.addChild(childNode);
-        buildNode(childNode); // here is the recursion, explore down this path
+        buildNode(childNode);
       }
     }
     buildNode(); // build the rootNode
@@ -402,7 +402,7 @@ And, finally, we wrap this all up into one neat function and a class definition:
     }
     
     // at this point, nodeList is the reverse path with "home" as the last element
-    let path = nodeList.pop() ?? ""; // path starts with home (or is empty if list is empty)
+    let path = nodeList.pop() ?? ""; // path starts with "home" (or is empty if list is empty)
     nodeList.reverse(); // now it's "left-to-right"
     for (let server of nodeList) {
       path += " -> " + server;
