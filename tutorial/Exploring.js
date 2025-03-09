@@ -264,9 +264,9 @@ Again, this is an ideal use-case for Recursion. First let's make our server obje
       if (visited.includes(connection)) {
         continue;
       }
-      visited.push(connection); // else, add it to the list and the parent node
+      visited.push(connection); // else, add it to the list 
       let childNode = new Node(connection);
-      node.addChild(childNode);
+      node.addChild(childNode); // and connect the parent node
       buildNode(childNode); // here is the recursion, explore down this path
     }
   }
