@@ -7,3 +7,6 @@ Some scripts / files may contain spoilers for the game. At some point, I would l
 
 # About me:
 I am a C/C++ developer by trade, with experience with Python and Lua in my recent employment. While I have learned some JS for this game, I do not consider myself a JS developer. This is evident in the code; I will often bypass the one-line built-in JS conventions to do the same thing in a multi-line loop. 
+
+# Everthing is political these days... 
+In my opinion, for whatever it's worth to anyone reading, is that "politics" aren't just politics when it is "political" to consider any group of people as less-than human. That said, it is not political to say that, Steve Bannon, Vladimir Putin, Elon Musk, and Donald Trump - the heads of the MAGA/Republican party, are doing everything they can to unravel Democracy and the Free World. With that said, if you agree with these 'politics' - i.e. Fascism - respectfully, go deepthroat a cactus. I can't stop you from using my code, but it comes with a curse for fascists and fascist-enablers: I curse you with extra knowledge and empathy. I curse you to know and understand the pain you have unknowingly inflicted on others. 
