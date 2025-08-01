@@ -58,7 +58,6 @@ export function getAllServers(ns) {
   //              recursiveScan("home"), again, return returns almost immediately
   // If you can understand how to handle these smaller cases, it should be pretty clear that you can add 
   // more and more connections and still come out with a full server list. 
-  //        the loop and then the function exit. AllServer is a list with one string, "home", in it. 
 }
 
 export function naivePathSearch() {
