@@ -235,7 +235,7 @@ The home object might be represted as:
     ] }
   }
 
-Indeed, this seems way more complex that the above network diagram, but this is the hidden information that is so 
+Indeed, this seems way more complex than the above network diagram, but this is the hidden information that is so 
 easily glossed over. This tree needs to be created dynamically in the program, and not just typed out like above. 
 
 Again, this is an ideal use-case for Recursion. First let's make our server object (traditionally called a "Node"): 
