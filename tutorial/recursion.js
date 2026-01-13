@@ -57,7 +57,7 @@ function recursionExample(ns) {
   // function, but they keep a snapshot of current function variables. 
 
   // When we called recursiveLoop(), loopIndex = 0. when recursiveLoop(1) 
-  // was then called, it had it's own two varaibles, loopIndex = 1. Even though they are in the 
+  // was then called, it had its own varaible, loopIndex = 1. Even though they are in the 
   // same function definition, and they have the same name, loopIndex from the first call is 
   // retained. It is in a different part of memory in the second (and subsequent) call.  
   // You can prove this by switching the order of the print and the recursive call. 
