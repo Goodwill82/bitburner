@@ -76,7 +76,7 @@ function makeServerList(ns) {
   // because then it shares FullServerList defined above so I don't have to pass it. 
   function recursionScan(scanFrom = "home") {
     // the following loop style is another way to go through each element of a list. 
-    // It a convenient shorthand, but could also be done with: 
+    // It's a convenient shorthand, but could also be done with: 
     // let scanList = ns.scan(scanFrom);
     // for (let i = 0; i < scanList; ++i) {
     //   let server = scanList[i]; // or scanList.at(i)
