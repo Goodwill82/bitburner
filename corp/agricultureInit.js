@@ -18,13 +18,21 @@ export async function main(ns: NS) {
     //  ns.exit();
     }
   }
-  let numDivs = corpInfo.divisions.length;
   ns.corporation.expandIndustry("Agriculture", AgricultureDivName);
-  corpInfo = ns.corporation.getCorporation();
-  if (numDivs >= corpInfo.divisions.length) {
+  let divInfo: Division | undefined = undefined;
+  try {
+     divInfo = ns.corporation.getDivision(AgricultureDivName);
+  }
+  catch {
     ns.tprint("ERROR: Could not start new Agriculture division.");
     ns.exit();
   }
+  for (const city of divInfo.cities) {
+    await initCity(ns, city);
+  }
+}
+
+export async function initCity(ns: NS, city: CityName) {
 }
 
 //type CorpIndustryName =
